@@ -24,7 +24,27 @@ london_co = {
     'routing': True
     }
 }
-dev=input('dev name: ')
 
-param=input('Enter parameter name (ios,model,vendor,location,ip)')
+access_template = ['switchport mode access',
+                   'switchport access vlan {}',
+                   'switchport nonegotiate',
+                   'spanning-tree portfast',
+                   'spanning-tree bpduguard enable']
+
+
+trunk_template = ['switchport trunk encapsulation dot1q',
+                  'switchport mode trunk',
+                  'switchport trunk allowed vlan {}']
+
+
+
+
+
+
+
+if_mode=input('access\trunk: ') 
+if_num=input('Fa0/1 Gi0/3: ')
+vlans=input('Enter vlans:')
+
+
 print(london_co[dev.lower()][param.lower()])
